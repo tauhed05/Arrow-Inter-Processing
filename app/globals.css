@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+  }
+  /* Sustainability fills the screen, so it lands a little higher under the menu bar. */
+  #sustainability {
+    scroll-margin-top: -1.75rem;
+  }
+  body {
+    @apply bg-paper font-body text-ink antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display font-bold uppercase leading-[1.02] tracking-tight;
+    text-wrap: balance;
+  }
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-accent;
+  }
+}
+
+/*
+ * Motion. Only opacity and `translate` are animated (cheap for the browser, and separate from the
+ * `transform` used by the hover lifts). Everything ends fully visible, and it is all switched off
+ * below for visitors who prefer reduced motion.
+ */
+
+/* Hero entrance: runs once on load. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    translate: 0 14px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+.rise {
+  animation: rise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.rise-1 {
+  animation-delay: 0.05s;
+}
+.rise-2 {
+  animation-delay: 0.12s;
+}
+.rise-3 {
+  animation-delay: 0.19s;
+}
+.rise-4 {
+  animation-delay: 0.26s;
+}
+
+/* Scroll reveal: headings and cards fade up as they enter the screen.
+   Browsers without scroll-driven animations simply show everything. */
+@supports (animation-timeline: view()) {
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      translate: 0 24px;
+    }
+    to {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+  .reveal,
+  .reveal-children > * {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .rise,
+  .reveal,
+  .reveal-children > * {
+    animation: none;
+  }
+}
