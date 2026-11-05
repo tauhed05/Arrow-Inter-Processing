@@ -4,7 +4,7 @@ import { Button, Section, SectionHeading } from "./ui";
 
 export default function About() {
   return (
-    <Section id="about" tone="light" padding="pb-14 pt-8 sm:pb-16 sm:pt-10 lg:pb-20 lg:pt-12">
+    <Section id="about" tone="light" padding="pb-14 pt-8 sm:pb-16 sm:pt-10 lg:flex lg:min-h-[calc(100vh-4.5rem)] lg:items-start lg:pb-12 lg:pt-[6.25rem]">
       <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <div className="grid grid-cols-2 gap-4">
           <Image
@@ -23,12 +23,14 @@ export default function About() {
           />
         </div>
 
-        <div className="lg:relative lg:top-6">
+        <div className="lg:relative lg:-top-2">
           <SectionHeading
             eyebrow="Who we are"
             title="Your trusted|washing partner"
             spacing="mb-4 sm:mb-5"
-            leading="leading-[1.1]"
+            leading="leading-[1.32]"
+            eyebrowSpacing="mb-7"
+            titleClassName="lg:relative lg:-top-2.5"
             text="We are a garment washing and finishing house built for export manufacturers and global brands. Modern machines, skilled technicians and careful planning let us turn raw garments into retail-ready products, season after season."
           />
           <ul className="mb-10 grid gap-x-8 gap-y-5 sm:grid-cols-2">

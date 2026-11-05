@@ -51,7 +51,7 @@ function spanFor(index: number, total: number) {
 
 export default function Services() {
   return (
-    <Section id="services" padding="pb-14 pt-8 sm:pb-16 sm:pt-10 lg:pb-20 lg:pt-12">
+    <Section id="services" padding="pb-14 pt-10 sm:pb-16 sm:pt-12 lg:pb-20 lg:pt-16">
       <SectionHeading
         eyebrow="What we do"
         title="Complete washing solutions"

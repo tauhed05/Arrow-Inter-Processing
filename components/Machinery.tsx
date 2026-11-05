@@ -17,7 +17,7 @@ function MachineCard({ name, type, text, image }: (typeof machines)[number]) {
 
 export default function Machinery() {
   return (
-    <Section id="machinery" padding="pb-14 pt-8 sm:pb-16 sm:pt-10 lg:pb-20 lg:pt-12">
+    <Section id="machinery" padding="pb-14 pt-10 sm:pb-16 sm:pt-12 lg:pb-20 lg:pt-16">
       <SectionHeading
         spacing="mb-5 sm:mb-6"
         eyebrow="Our machinery"

@@ -3,7 +3,7 @@ import { Section, SectionHeading } from "./ui";
 
 export default function Process() {
   return (
-    <Section id="process" tone="light" padding="pb-14 pt-10 sm:pb-16 sm:pt-10 lg:pb-16 lg:pt-10">
+    <Section id="process" tone="light" padding="pb-14 pt-12 sm:pb-16 sm:pt-12 lg:pb-16 lg:pt-14">
       <SectionHeading
         spacing="mb-3 sm:mb-4"
         eyebrow="Our process"

@@ -9,7 +9,7 @@
   }
   /* Sustainability fills the screen, so it lands a little higher under the menu bar. */
   #sustainability {
-    scroll-margin-top: -1.75rem;
+    scroll-margin-top: -0.5rem;
   }
   body {
     @apply bg-paper font-body text-ink antialiased;

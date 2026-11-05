@@ -11,7 +11,7 @@ const contentTop = "mt-3 leading-7";
 function FooterList({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h4 className={`${headerRow} text-xs font-extrabold uppercase tracking-[0.18em] text-white`}>{title}</h4>
+      <h4 className={`${headerRow} relative top-1.5 text-xs font-black uppercase tracking-[0.18em] text-white`}>{title}</h4>
       <ul className={`${contentTop} text-sm`}>{children}</ul>
     </div>
   );

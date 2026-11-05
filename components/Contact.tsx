@@ -11,12 +11,14 @@ export default function Contact() {
   ];
 
   return (
-    <Section id="contact" padding="pb-14 pt-10 sm:pb-16 sm:pt-12 lg:pb-20 lg:pt-16">
+    <Section id="contact" padding="pb-14 pt-10 sm:pb-16 sm:pt-12 lg:flex lg:min-h-[calc(100vh-4.5rem)] lg:items-center lg:pb-10 lg:pt-[4.25rem]">
       <div className="grid gap-10 lg:grid-cols-[auto_auto_auto] lg:justify-between lg:gap-x-12">
         <div>
           <SectionHeading
             eyebrow="Get started"
             spacing="mb-5 sm:mb-6"
+            leading="leading-[0.96]"
+            eyebrowSpacing="mb-3"
             title="Let's talk about|your order"
             text="Send us your wash reference, quantity and delivery date. Our team replies within|one working day."
           />

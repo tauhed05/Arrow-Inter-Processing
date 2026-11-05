@@ -41,21 +41,22 @@ export default function Header() {
   }, []);
 
   return (
+    <>
+    <div className="hidden bg-[#245a42] text-sm font-normal leading-none text-white sm:block">
+      <Container className="flex h-9 items-center justify-between">
+        <span>{company.address}</span>
+        <span className="flex items-center gap-6">
+          <span>{company.phone}</span>
+          <span>{company.email}</span>
+        </span>
+      </Container>
+    </div>
+
     <header
       className={`sticky top-0 z-50 border-b border-primary/10 bg-paper/95 backdrop-blur transition-shadow ${
         scrolled ? "shadow-md shadow-primary/10" : ""
       }`}
     >
-      <div className="hidden bg-[#245a42] text-sm font-normal leading-none text-white sm:block">
-        <Container className="flex h-9 items-center justify-between">
-          <span>{company.address}</span>
-          <span className="flex items-center gap-6">
-            <span>{company.phone}</span>
-            <span>{company.email}</span>
-          </span>
-        </Container>
-      </div>
-
       <Container className="flex h-16 items-center justify-between sm:h-20">
         <Logo />
 
@@ -103,5 +104,6 @@ export default function Header() {
         </nav>
       )}
     </header>
+    </>
   );
 }

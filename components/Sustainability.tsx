@@ -3,7 +3,7 @@ import { Section, SectionHeading } from "./ui";
 
 export default function Sustainability() {
   return (
-    <Section id="sustainability" tone="primary" padding="pb-14 pt-10 sm:pb-16 sm:pt-12 lg:flex lg:min-h-[calc(100vh-2.75rem)] lg:pb-10 lg:pt-[4.25rem]">
+    <Section id="sustainability" tone="primary" padding="pb-14 pt-10 sm:pb-16 sm:pt-12 lg:flex lg:min-h-[calc(100vh-4rem)] lg:pb-10 lg:pt-[4.25rem]">
       <div className="grid gap-10 lg:h-full lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <div className="lg:self-center">
           <SectionHeading

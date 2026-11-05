@@ -45,7 +45,9 @@ export function SectionHeading({
   text,
   inverse = false,
   spacing = "mb-8 sm:mb-10",
-  leading = "leading-[0.96]",
+  leading = "leading-[1.1]",
+  eyebrowSpacing = "mb-5",
+  titleClassName = "",
 }: {
   eyebrow: string;
   title: string;
@@ -55,18 +57,22 @@ export function SectionHeading({
   spacing?: string;
   /** Line height of the title, for headings that need a little more space between their two lines. */
   leading?: string;
+  /** Space between the small label and the title. */
+  eyebrowSpacing?: string;
+  /** Extra classes for the title, e.g. to nudge it without moving the text around it. */
+  titleClassName?: string;
 }) {
   return (
     <div className={`reveal max-w-2xl ${spacing}`}>
       <p
-        className={`mb-3 flex items-center gap-3 text-sm font-bold uppercase tracking-[0.2em] sm:text-base ${
+        className={`${eyebrowSpacing} flex items-center gap-3 text-sm font-bold uppercase tracking-[0.2em] sm:text-base ${
           inverse ? "text-white/80" : "text-ink/60"
         }`}
       >
         <span className={`h-0.5 w-9 ${inverse ? "bg-white/60" : "bg-ink/60"}`} />
         {eyebrow}
       </p>
-      <h2 className={`text-[1.75rem] ${leading} sm:text-4xl lg:text-[2.75rem]`}>
+      <h2 className={`text-[1.75rem] ${leading} sm:text-4xl lg:text-[2.75rem] ${titleClassName}`}>
         {/* "|" in a title marks the line break, so headings keep the same two lines at every font size. */}
         {title.split("|").map((line) => (
           <span key={line} className="block">
@@ -78,7 +84,7 @@ export function SectionHeading({
         <p className={`mt-4 text-base leading-7 sm:text-[17px] ${inverse ? "text-white/80" : "text-ink/70"}`}>
           {/* "|" in the text marks a fixed line break, the same as in titles. */}
           {text.split("|").map((line) => (
-            <span key={line} className="block lg:whitespace-nowrap">
+            <span key={line} className={`block ${text.includes("|") ? "lg:whitespace-nowrap" : ""}`}>
               {line}
             </span>
           ))}

@@ -4,12 +4,12 @@ import { Section, SectionHeading } from "./ui";
 
 export default function WashLibrary() {
   return (
-    <Section id="wash-library" tone="light" padding="pb-14 pt-10 sm:pb-16 sm:pt-12 lg:pb-20 lg:pt-16">
+    <Section id="wash-library" tone="light" padding="pb-14 pt-10 sm:pb-16 sm:pt-12 lg:flex lg:min-h-[calc(100vh-4.5rem)] lg:items-center lg:pb-10 lg:pt-[4.25rem]">
       <div className="mb-8 flex flex-wrap items-end justify-between gap-x-8 gap-y-4 sm:mb-10">
         <SectionHeading
           eyebrow="Wash library"
           title="Signature wash looks"
-          text="A few of the standard shades we run every week. We also develop custom looks from your references."
+          text="A few of the standard shades we run every week.|We also develop custom looks from your references."
           spacing="mb-0"
         />
         <a
