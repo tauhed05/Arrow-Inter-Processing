@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { machines } from "@/lib/data";
+import ScrollLink from "./ScrollLink";
 import { Section, SectionHeading } from "./ui";
 
 function MachineCard({ name, type, text, image }: (typeof machines)[number]) {
@@ -27,8 +28,8 @@ export default function Machinery() {
         {machines.map((m, i) => (
           <MachineCard key={i} {...m} />
         ))}
-        <a
-          href="#contact"
+        <ScrollLink
+          to="#contact"
           className="flex flex-col justify-center rounded-2xl bg-primary p-8 text-white transition-colors hover:bg-[#245a42]"
         >
           <h3 className="text-3xl leading-[1.05]">Need capacity details?</h3>
@@ -36,7 +37,7 @@ export default function Machinery() {
             Ask us about machine counts, load sizes and lead times for your order.
           </p>
           <span className="mt-6 font-display text-xl font-bold uppercase tracking-wider">Contact us →</span>
-        </a>
+        </ScrollLink>
       </div>
     </Section>
   );

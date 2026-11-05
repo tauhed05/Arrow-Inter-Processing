@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { washes } from "@/lib/data";
+import ScrollLink from "./ScrollLink";
 import { Section, SectionHeading } from "./ui";
 
 export default function WashLibrary() {
@@ -12,12 +13,12 @@ export default function WashLibrary() {
           text="A few of the standard shades we run every week.|We also develop custom looks from your references."
           spacing="mb-0"
         />
-        <a
-          href="#contact"
+        <ScrollLink
+          to="#contact"
           className="font-display text-lg font-bold uppercase tracking-wider text-primary underline-offset-4 hover:underline"
         >
           Send us your reference →
-        </a>
+        </ScrollLink>
       </div>
 
       <div className="reveal-children grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-6">

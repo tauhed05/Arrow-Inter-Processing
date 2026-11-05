@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { company, navLinks, services } from "@/lib/data";
 import { Logo } from "./Header";
+import ScrollLink from "./ScrollLink";
 import { Container } from "./ui";
 
 // Every column starts with a 48px header row (logo or heading, centred in it) and its content
@@ -61,18 +62,18 @@ export default function Footer() {
             {navLinks
               .map((l) => (
                 <li key={l.href}>
-                  <a href={l.href} className="hover:text-white">
+                  <ScrollLink to={l.href} className="hover:text-white">
                     {l.label}
-                  </a>
+                  </ScrollLink>
                 </li>
               ))}
           </FooterList>
           <FooterList title="Services">
             {services.slice(0, 5).map((s) => (
               <li key={s.title}>
-                <a href={`#${s.id}`} className="hover:text-white">
+                <ScrollLink to={s.id} className="hover:text-white">
                   {s.title}
-                </a>
+                </ScrollLink>
               </li>
             ))}
           </FooterList>

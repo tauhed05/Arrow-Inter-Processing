@@ -3,11 +3,12 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { company, navLinks } from "@/lib/data";
+import ScrollLink from "./ScrollLink";
 import { Button, Container } from "./ui";
 
 export function Logo({ onDark = false }: { onDark?: boolean }) {
   return (
-    <a href="#top" aria-label={`${company.name} home`} className="flex items-center gap-1.5">
+    <ScrollLink to="#top" aria-label={`${company.name} home`} className="flex items-center gap-1.5">
       <Image src="/images/logo-mark.png" alt="" width={200} height={207} className="h-10 w-auto sm:h-[44px]" />
       <span className="relative top-[4px] leading-none">
         <span
@@ -25,7 +26,7 @@ export function Logo({ onDark = false }: { onDark?: boolean }) {
           Inter Processing
         </span>
       </span>
-    </a>
+    </ScrollLink>
   );
 }
 
@@ -62,9 +63,9 @@ export default function Header() {
 
         <nav className="hidden items-center gap-6 xl:flex" aria-label="Main">
           {navLinks.map((l) => (
-            <a key={l.href} href={l.href} className="border-b-2 border-transparent py-1 text-lg font-extrabold text-ink/80 transition-colors hover:border-accent hover:text-primary">
+            <ScrollLink key={l.href} to={l.href} className="border-b-2 border-transparent py-1 text-lg font-extrabold text-ink/80 transition-colors hover:border-accent hover:text-primary">
               {l.label}
-            </a>
+            </ScrollLink>
           ))}
         </nav>
 
@@ -91,14 +92,14 @@ export default function Header() {
         <nav id="mobile-nav" className="border-t border-primary/10 bg-paper xl:hidden" aria-label="Mobile">
           <Container className="flex flex-col py-2">
             {[...navLinks, { href: "#contact", label: "Contact Us" }].map((l) => (
-              <a
+              <ScrollLink
                 key={l.href}
-                href={l.href}
+                to={l.href}
                 onClick={() => setOpen(false)}
                 className="border-b border-primary/10 py-3 text-xl font-extrabold last:border-0"
               >
                 {l.label}
-              </a>
+              </ScrollLink>
             ))}
           </Container>
         </nav>

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import ScrollLink from "./ScrollLink";
 
 export function Container({
   children,
@@ -108,11 +109,11 @@ export function Button({ href, children, variant = "primary", className = "" }: 
     light: "bg-white text-primary hover:bg-light",
   };
   return (
-    <a
-      href={href}
+    <ScrollLink
+      to={href}
       className={`inline-flex items-center justify-center gap-2 rounded-md px-7 py-3.5 font-display text-lg font-bold uppercase tracking-wider transition-colors ${variants[variant]} ${className}`}
     >
       {children}
-    </a>
+    </ScrollLink>
   );
 }
