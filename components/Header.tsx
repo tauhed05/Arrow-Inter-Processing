@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { company, navLinks } from "@/lib/data";
+import EmailLink from "./EmailLink";
+import PhoneLink from "./PhoneLink";
 import ScrollLink from "./ScrollLink";
 import { Button, Container } from "./ui";
 
@@ -47,8 +49,8 @@ export default function Header() {
       <Container className="flex h-9 items-center justify-between">
         <span>{company.address}</span>
         <span className="flex items-center gap-6">
-          <span>{company.phone}</span>
-          <span>{company.email}</span>
+          <PhoneLink phone={company.phone} className="underline-offset-4 hover:underline" />
+          <EmailLink email={company.email} subject="Wash order enquiry" className="underline-offset-4 hover:underline" />
         </span>
       </Container>
     </div>

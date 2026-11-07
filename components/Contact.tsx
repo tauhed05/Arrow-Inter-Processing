@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { company } from "@/lib/data";
 import EmailLink from "./EmailLink";
+import PhoneLink from "./PhoneLink";
 import { Section, SectionHeading } from "./ui";
 
 export default function Contact() {
   const facts = [
     { label: "Factory", value: company.address },
-    { label: "Phone", value: company.phone, href: `tel:${company.phone.replace(/[^\d+]/g, "")}` },
+    { label: "Phone", value: company.phone, phone: true },
     { label: "Email", value: company.email, email: true },
     { label: "Hours", value: company.hours },
   ];
@@ -28,16 +29,14 @@ export default function Contact() {
               <div key={f.label} className="grid gap-1 py-4 sm:grid-cols-[110px_1fr] sm:items-baseline sm:gap-4">
                 <dt className="text-sm font-bold uppercase leading-6 tracking-wider text-accent">{f.label}</dt>
                 <dd className="break-words text-sm font-normal leading-6">
-                  {f.email ? (
+                  {f.phone ? (
+                    <PhoneLink phone={company.phone} className="underline-offset-4 hover:text-primary hover:underline" />
+                  ) : f.email ? (
                     <EmailLink
                       email={company.email}
                       subject="Wash order enquiry"
                       className="underline-offset-4 hover:text-primary hover:underline"
                     />
-                  ) : f.href ? (
-                    <a href={f.href} className="underline-offset-4 hover:text-primary hover:underline">
-                      {f.value}
-                    </a>
                   ) : (
                     f.value
                   )}
